@@ -162,7 +162,7 @@ Use CONVERSATION mode sparingly — prefer building a schedule with reasonable a
   }
 
   // Patch reasoning so the UI and conversation history stay accurate.
-  let finalReasoning = parsed.reasoning ?? "";
+  let finalReasoning = parsed!.reasoning ?? "";
   if (skipped.length > 0 && unitsSoFar < TARGET_MIN) {
     const codes = skipped.map((c) => c.code).join(" and ");
     finalReasoning += ` Just a heads-up — ${codes} overlapped with other classes so I had to leave ${skipped.length === 1 ? "it" : "them"} out, and I couldn't quite hit 12 units with what's left. Let me know if you'd like to adjust your preferences and I'll try again!`;
